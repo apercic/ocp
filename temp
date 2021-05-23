@@ -31,4 +31,28 @@ public class ReadInventoryThread extends Thread {
 public static void main(String[] args) {
   (new ReadInventoryThread()).start();
 - Calling run() on a Thread or a Runnable does not actually start a new thread. (just executes code in same thread)
-- 
+
+- java.util.concurrent.atomic package Atomic classes - solving the race condition
+- AtomicBoolean, AtomicInteger, AtomicLong (new AtomicInteger(0); get(), set(), getAndSet(), getAndIncrement(), decrementAndGet()..)
+
+- SheepManager manager = new SheepManager();
+synchronized(manager) {
+// Work to be completed by one thread at a time - one thread acquires the lock
+} 
+-To synchronize access across multiple threads, each thread must have access to
+the same Object. For example, synchronizing on different objects would not actually order the results.
+- You must synchronize the execution of threads not their creation
+- synchronized blocks allow only one thread to enter
+
+- Lock interface - like synchronize just better, can only lock on object that implements the Lock interface
+Lock lock = new ReentrantLock();
+  try {
+    lock.lock();
+  // Protected code
+  } finally {
+    lock.unlock();
+  }
+  
+- It is critical that you release a lock the same number of times it is acquired. For calls with tryLock(), you
+need to call unlock() only if the method returned true.  
+  
