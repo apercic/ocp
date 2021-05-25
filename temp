@@ -54,5 +54,6 @@ Lock lock = new ReentrantLock();
   }
   
 - It is critical that you release a lock the same number of times it is acquired. For calls with tryLock(), you
-need to call unlock() only if the method returned true.  
+need to call unlock() only if the method returned true. 
+- 
   
