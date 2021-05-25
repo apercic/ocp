@@ -5,6 +5,7 @@ EXCEPTIONS:
 -try‐with‐resources statements require resources that implement the AutoCloseable interface
 
 CONCURRENCY:
+- if you call run() on thread it wont start a new thread - you must call start()
 - java.lang.Runnable is a functional interface that takes no arguments and returns no data
 ex. Runnable sloth = () -> System.out.println("Hello World");
 - Even though Runnable is a functional interface, many classes implement it directly:
@@ -55,5 +56,11 @@ Lock lock = new ReentrantLock();
   
 - It is critical that you release a lock the same number of times it is acquired. For calls with tryLock(), you
 need to call unlock() only if the method returned true. 
-- 
-  
+
+- Concurrency classes: ConcurrentHashMap, ConcurrentLinkedQueue, ConcurrentSkipListMap, ConcurrentSkipListSet, CopyOnWriteArrayList, CopyOnWriteArraySet, LinkedBlockingQueue
+(skipList/skipSet are sorted, concurrent collections; copyOnWrite make a new copy of all elements when added/removed elements; BlockingQueue contains methods which wait
+a specific time to complete an operation, has: offer() and poll() - both with timeunit)
+- Threading issues: deadlock(blocked forever), starvation(denied access), and livelock(failed deadlock resolution - releasing resources in hope of resolving deadlock)
+ 
+ - List.of(1,2,3,4,5,6).stream().unordered(); - calling unordered() on paralel streams can greatly improve performance
+ - boxed() returns a Stream consisting of the elements of this stream, each boxed to an Integer
