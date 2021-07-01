@@ -1,3 +1,22 @@
+JAVA DATA TYPES
+- .strip() or .trim() on a string both function the same (strip is unicode aware - never,better)
+- look up methods of StringBuilder (reverse, append(str) - can also be append(str, start, len), insert, replace, capacity(shows current capacity), 
+- Type sizes in bytes: byte(1), short(2), char(2), int(4), long(8), float(4), double(8), boolean(1)
+- sout(5/4) = 1; sout('a') = a; sout('a'+1) = 98
+- int z=x++; - z gets value of starting x, then x is incremented
+- var i = new int[]{1,2}; is legal
+- 'var' is not allowed in a compound declaration(example: var a, b,c;
+- String String = "lala"; is valid - there is no restriction on variables after class names
+- All compound assignment operators internally do an explicit cast (s *= b) - is casted to s's type
+- % operator can be used with float
+- *, / and % have the same level of precedence
+- float bb = 1f(the same without the f); System.out.println(bb); = 1.0
+- Although confusing, it is legal to have multiple underscores between two digits 1___3 = 13, legal
+- String is a final class, cannot be extended
+
+OBJECT ORIENTED
+- 
+
 EXCEPTIONS: 
 - In Java, all exceptions that inherit Exception but not RuntimeException are considered checked exceptions(checked need to be handled)
 - unchecked exceptions include any class that inherits RuntimeException or Error. An Error is fatal, and it is considered a poor practice to catch it.
