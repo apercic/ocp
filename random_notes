@@ -1,0 +1,508 @@
+ZAPISKI OCA EXAM:
+- packages pogleda avtomatično v trenutni package
+- constructor public class Chick { public Chick() {};}
+- constructor runs last ( after all fields and instance initializer blocks have run)
+- octal (digits 0–7), which uses the number 0 as a prefix—for example, 017
+- hexadecimal (0–9 and A–F), which uses the number 0 followed by x or X as a prefix—for example, 0xFF
+- binary (digits 0–1), which uses the number 0 followed by b or B as a prefix—for example, 0b10
+- You can add underscores anywhere except at the beginning of a literal, the end of a literal, right before a
+  decimal point, or right after a decimal point. double notAtStart = _1000.00; // DOES NOT COMPILE
+- The name must begin with a letter or the symbol $ or _, subsequent characters may also be numbers
+- local variables(declared within a method) must be initialized before use
+- Variables that are not local variables are known as instance variables or class variables.
+  Instance variables are also called fields. Class variables are shared across multiple objects(static keyword)
+- Instance and class variables do not require you to initialize them - given default value
+- Local variables—in scope from declaration to end of block
+  Instance variables—in scope from declaration until object garbage collected
+  Class variables—in scope from declaration until program ends
+- PIC (picture): package, import, and class (order of elements)
+- public static void main(String[] args)
+- finalize() method will run once for each object if/when it is first garbage collected
+- boolean expression ? expression1 : expression2
+- If two values have different data types, Java will automatically promote one of the values to the larger of the two data types.
+- If one of the values is integral and the other is floating-point, Java will automatically
+  promote the integral value to the floating-point value’s data type
+- byte, short, and char, converted to int when they’re used with a Java binary arithmetic operator,
+   (če daš ++ ali ! je pa še vedno short -unary operators are excluded)
+- float y = 2.1; -se ne skompajla ker manka f
+- long t = 192301398193810323; // DOES NOT COMPILE -manjka L za int je preveliko št.
+- boolean z = !0; // DOES NOT COMPILE (true/false are not related to 0/1 in java)
+- y *= x; nardi tud cast če je y int, x pa long; y = y*x; bi pa fejlal compajl
+- long y = (x=3); x=3 in y=3
+- ^ exclusive OR - true if operands are different
+- int x = 1;
+  if(x) { // DOES NOT COMPILE
+- switch nemore met boolean ali long expresiona v conditionu
+- switch order doesnt mater - npr.default je lahk prvi
+- če ni break-ov gre kr naprej od tm kjer se prvič najde - po prvem nč več ne preverja pogojev
+- default se kliče sam če ni exact matcha drugje
+- the CASE statement value must also be a literal, enum constant, or final constant variable
+- če je passano v funkcijo - ni final
+- vsi CASE statementi morjo matchat tip pogoja v switchu
+- for( ; ) and for( ) will not compile but for( ; ; ) will
+- The variables in the initialization block must all be of the same type. If y and z were both long it would compile fine
+- for(datatype instance : collection) { je lahk array ali list
+- int[][] myComplexArray = {{5,2,1,3},{3,9,8,9},{5,7,12,7}};
+- The optional label parameter allows us to break out of a higher level outer loop
+- v switch nemorš dat continue
+- If either operand is a String, + means concatenation npr.: (1 + 2 + "c") = 3c, The expression is evaluated left to right, addition if numeric
+- int indexOf(char ch, index fromIndex) = String class method
+- substring: endIndex parameter is allowed to be 1 past the end of the sequence if you want to stop at the end of the sequence.
+- če na StringBuilder kličeš substring - vrne String
+- String x = "Hello World";
+  String y = "Hello World";
+  System.out.println(x == y); // true
+- String x = "Hello World";
+  String z = " Hello World".trim();
+  System.out.println(x == z); // false
+- String x = new String("Hello World");
+  String y = "Hello World";
+  System.out.println(x == y); // false
+- the authors of StringBuilder did not implement equals(). If you call equals() on two StringBuilder
+ instances, it will check reference equality
+- Line 9 prints false since Tiger does not implement equals().
+- int[] numbers2 = new int[] {42, 55, 99}; OR int[] numbers2 = {42, 55, 99}; -array inicialization
+- Numbers sort before letters and uppercase sorts before lowercase
+- Target element not found in sorted array:
+  return negative value showing one smaller than the negative of index, where a match needs to be inserted to preserve sorted order
+- int[][] differentSize = {{1, 4}, {3}, {9,8,7}};
+- List<String> list6 = new ArrayList<>(); //OK
+  ArrayList<String> list7 = new List<>(); // DOES NOT COMPILE
+  List is an interface - can't be instantiated
+- You should also know that ArrayList implements toString() so you can easily see the
+  contents just by printing it. Arrays do not do produce such pretty output.
+- 3: List<String> birds = new ArrayList<>();
+  4: birds.add("hawk"); // [hawk]
+  5: birds.add("hawk"); // [hawk, hawk]
+  6: System.out.println(birds.remove("cardinal")); // prints false
+  7: System.out.println(birds.remove("hawk")); // prints true
+  8: System.out.println(birds.remove(0)); // prints hawk
+-The set() method changes one of the elements of the ArrayList without changing the size.
+ replace elementa nardi, nemore dodat
+- static and instance variables are automatically assigned a value even if you don't initialize them explicitly
+  but local variables must be initialized explicitly before they are used.
+- args array is never null. If the program is run without any arguments, args points to a String array of length 0
+- String, byte, char, short, int, and enum values can be used as types of a switch variable
+- char=16bit-unsigned, byte=8bit-signed
+- switch statement must have a body
+- default accessibility are only accessible within the class itself and from other classes in the same package. 
+  protected members are in addition accessible from subclasses in any other package as well
+- Widening is preferred to boxing/unboxing (because of rule 2), which in turn, is preferred over var-args
+- variables are not overridden. They are hidden or shadowed and it is ok for a subclass to hide a variable defined in the base class
+- Fields in an interface are implicitly public, static and final
+- Keep in mind that static methods are never overridden, they may be hidden by a static method of a subclass with the same signature
+- inheritance: metode se kličejo glede na tip new() objecta, fieldi(in statične metode!) se kličejjo glede na trenutno referenco
+- return types must match when overriding
+- v childu overridane metode morjo met manj restricted anotacijo(npr. parent default, child public)
+- private>default>protected>public restricted
+- child konstuktor kliče najprej super konstruktor - tud tuki se kličejo child metode, če so overridane
+- The List.of, Set.of, and Map.of methods return an unmodifiable List, Set, and Map respectively. You cannot add or remove elements from them once they are created
+- String is a final class and final classes cannot be extended
+- ArrayList's remove(Object ) method returns a boolean, removes only first occurence
+- append() method does not exist in String class. It exits only in StringBuffer and StringBuilder
+- mamo str.isBlank() in str.isEmpty() - blank ne šteje whitespaca, empty pa ga upošteva kt del stringa
+- public StringBuilder delete(int start, int end) Removes the characters in a substring of this sequence
+- printUsefulData(al, (d)-> return d.value>2;);
+If you write return, the compiler assumes that you are writing the complete method body and so it expects the curly braces as well as the semi-colon
+-  printUsefulData(al, Data d-> d.value>2);
+  If you write parameter type, the compiler assumes that you are writing the complete parameter list of the method and so, it expects the parentheses i.e. (Data d) instead of just Data d
+- (parameter list) OR single_variable_without_type -> { regular lines of code } OR just_an_expression_without_semicolon !!!
+- To take advantage of lambda expressions, an interface must be a "functional" interface, which basically means that the interface must have exactly one abstract method
+   Any method of an interface that is not static or default is implicitly abstract - navadna interface metoda ki ni default
+- Remember that local variables referenced from a lambda expression must be final or effectively final
+- String is a final class and final classes cannot be extended. StringBuffer and StringBuilder are also final - nemorš rečt extends String
+-  you cannot use dash (-) in a java identifier, any module name that uses a dash is invalid. Further, an identifier cannot start with a number
+- All non-static members are instance members
+- short circuiting logical operators: || in &&
+- An interface may extend an interface
+- You can either call super(<appropriate list of arguments>) or this(<appropriate list of arguments>) but not both from a constructor
+- native keyword?/ intern() na String
+- A try without resources must have either a catch or a finally
+- An Overriding method is allowed to make the overridden method more accessible
+- there is no constructor in Short that takes an int
+- The left operand of instanceof MUST be a reference variable and not a primitive
+- Any two numeric primitives can be compared using == operator. Even a numeric primitive and a primitive wrapper (for example, an int with a Short or a Double) can be compared. However, two wrappers of different types (for example, an Integer and a Short) cannot be compared using ==.
+- - child dobi public in protected polja avtomatsko,
+  private fields are never accessible via inheritance
+  - class can extend one/implement multiple
+  - class = final : can't be extended
+  - default access modifier je package-private
+  - če so classi v istem packagu nam jih ni treba importat
+  - u constuktorjih mora bit .this če je isto ime
+  - če mata otrok in starš neko polje bo default iskalo najprej njegovo lastno(otrok/starš)
+  - tud privat konstruktor overrida default generiranga
+  - public Hamster(int weight) {
+    this(weight, "brown");
+    } - konstruktor kliče konstruktor
+
+  -this()/super() call must be the first statement in the constructor
+  - ne kompajla se če compiler zazna zanko v konstruktorjih
+  -the first statement of every constructor is either a call to another constructor within
+   the class, using this(), or a call to a constructor in the direct parent class, using super()
+  - če maš sam privaten construktor - nemorš extendad tega classa
+  - v child konstruktorju se avtomatsko kliče super()
+  - super() always refers to the most direct parent
+  - By the time the constructor completes, all final instance variables must be assigned a value!!!
+  - final instance variables must be assigned a value
+  - ko inicializiraš objekt - inicializacija spremenljivk, bloki kode, klican konstruktor na koncu
+- primerjanje stringov z == bo false
+- če string daš sam String x = "neki", bo == vrnu true, z y="neki", new String pa == vrne false,
+char concatenacija dela object, == vrne false
+- Short != equals Integer, int pa short sta pa ==
+- there is no constructor in Short that takes an int
+- Any two numeric primitives can be compared using == operator. Even a numeric primitive and a primitive wrapper (for example, an int with a Short or a Double) can be compared.
+ However, two wrappers of different types (for example, an Integer and a Short) cannot be compared using ==
+- var declaration is allowed only inside method body and for loop declarations. It is not allowed to declareclass/instance fields, method parameters, or method return types.
+- var allStudents = new ArrayList<>(); je čist valid, means the type of the objects in the list is java.lang.Object
+- var is not a keyword and so, it is ok to name a variable as var
+- static method cannot be overridden by a non-static method and vice versa(u subclasu nemorš met navadne metode iste, če ma parent statično)
+- The condition expression in a while() header is required, for(;;) can be empty-er
+- override metode isto vrača - return type (or covariant)
+- ArrayList extends java.util.AbstractList.
+- class ni nujno da ma no-args konstruktor, sam ne ga klicat direkt alpa prek subclassa
+- subclass more met subset exceptionov definiranih
+- x++; spremeni vrednost x-a
+- packages are exported" and "modules are required
+- če metoda v parentu vrže Exception, tud če bo u resnici klicana metoda childa - exception mora bit hendlan če je referenca starš
+    recimo A a = new B; a.m() - če m vrže exception v A-ju more bit ta block wrappan v try-catch ALI explicitno castan v B
+- metode v subclasu lahk vračajo subclass pr overridanju
+- čist legalno:
+List list = new ArrayList();
+       list.add(7);
+       list.add("lala");
+
+- You cannot put array size information on left hand side of equals sign: tole negre: int [3][2] lala = new int[][];xxx
+- var cA[][] = new char[3][]; NE - kr implicira da je tip variable var
+  var cAa = new char[3][];    OK - kr sam določ tip k je char[][] +brez 3-ke tud ni ok
+- Comparison operators have lower precedence than mathematical operators. Therefore, 1 + 5 < 3 + 7 is evaluated as (1 + 5) < (3 + 7)
+- finally cannot occur before any catch block.
+- When your method body comprises only a single expression, you must omit the semi-colon. - lambde
+- If you enclose your method body within curly braces, you must write complete lines of code including the semi-colon.
+- It is ok to omit the parameter types in case of a functional interface because the compiler can determine the type of the parameters by looking at the interface method.
+- Since Java 9, _ has been made a keyword. Therefore, it cannot be used as a variable name anymore
+- default void forEach(Consumer<? super T> action)
+- List .sort() - mu morš podat comparator
+- subclasses of ArrayList: AttributeList, RoleList, RoleUnresolvedList
+- An ArrayList cannot store primitives, It allows constant time access to all its elements
+- An ArrayList is backed by an array - that's why it's called an ArrayList
+- ArrayList is a subclass of AbstractList
+- var declarations are allowed only inside a method and in for loop declarations
+- JDK 11 nima več uklučenga DB engina, ma pa networking protokole in development tools
+- module-info.java must not be empty. At a minimum, it must specify the module name.
+- requires java.desktop; - required za swing application
+- methods that deal with the file system, such as opening, reading, and closing a file, declare that they throw java.io.IOException. IOException is a checked exception.
+ It has several subclasses. Two of the commonly used subclasses are FileNotFoundException and EOFException
+- var is not allowed as an element type of an array. Therefore, you can never apply square brackets on var
+- Before Java 9, reflection could be used to learn about all types in a package and all members of a type—even its private members—whether you wanted to allow this capability or not.
+Thus, nothing was truly encapsulated. This is not so with modules. By default, no such access is allowed.
+- String builder lohk inserta na 0: new StringBuilder("world").insert(0, "hello ").toString();
+- v main metodi lahk rečš int a; - sam nesmeš ga uporablat doklr ni inicializiran
+- IndexOutOfBoundsException extends RuntimeException and is therefore an unchecked exception.
+ A catch block is not needed for unchecked exceptions
+- final spremenljivke morjo bit inicializirane v konstruktorju
+- for is a keyword and so cannot be used as a label
+- short/char - kolk držita
+- When you use System.out.println(exception), a stack trace is not printed. Just the name of the exception class and the message is printed.
+ When you use exception.printStackTrace(), a complete chain of the names of the methods called, along with the line numbers, is printed
+- widening is preferred over boxing/unboxing
+- If any method in a class is declared abstract, then the whole class must be declared abstract
+- v ascii so male črke več vredne kt velke
+- Only methods of an interface can be private. private/protected fields are not allowed.
+- 'var' is not allowed in a compound declaration. In other words, you can define only one variable using var; int a = 10, b = 5 z var nemorš nardit
+- a = new String("A") in sout(a) ti bo sprintal "A"
+- == has higher precedence than =
+- če exception sam catchaš - nč ne throwaš, gre pol excecution programa lepo naprej normalno
+- compare and mismatch methods nad arrayi - pravila
+- lambda expression does not create a new scope for variables. Therefore, you cannot reuse the variable names that have already been used to define new variables in your argument
+- String class doesn't have append (and insert) method because a String cannot be mutated
+- local variables referenced from a lambda expression must be final or effectively final
+- = has least precedence of all operators
+- tud če maš new Child() in kličeš Parent p = new Child(); nad p kličeš metodo - kliče jo iz Child objekta
+  ampak more zarad reference ta metoda tud obstajat v parentu... lahk castaš v interface ali parent
+- it's a compile time error if an instance method overrides a static methods
+- StringBuilder zbrišeš z delete(0, sb.length) metodo
+- subinterface lahk overrida default metode definirane v parent interfacu
+- unreachable statement = compile time error
+- najprej gre v parent konstruktor - najprej se kliče super
+- new Short(1);  NI OK, morš castat v Short new Short((short)1);
+- a char's range is from 0 to 65535
+- če maš return v finaly metodi - se vedno to returna (tud če kje prej returnamo kej druzga - finally superseda)
+- List.add() returna true
+- pr interfacih: Having ambiguous fields or methods does not cause any problem by itself (except in the case of default methods)
+but referring to such fields or methods in an ambiguous way will cause a compile time error
+- You can have a main method that doesn't take String[] as an argument. It will not make the class executable from the command line though.
+- Access modifiers (public/private/protected) are valid only inside the scope of a class, not of a method.
+- int main = 5 je čist ok spremenljivka
+- mau si poglej vse rezervirane besede
+- var declarations are allowed only for local variables (i.e. variables defined inside method body)
+ and in for loops (for example, for(var i = 0; i<10; i++){ } )
+- == has less precedence than >
+- float f = 2, float f = 2.0f, nemorš pa rečt float f = 2.0 kr je avtomatsko double
+- You may use underscores (but not commas) to format a number for better code readability
+- range of a byte is from -128 to 127
+- Variables can't be declared as abstract or native.
+- StringBuilder sb = new StringBuilder(); sb.ensureCapacity(100);
+- konstruktor ne more bit statičen
+- final spremenljivke v classu morjo bit instancirane v usakm konstruktorju + inicializirane pred uporabo
+- A reference to a static field (§8.3.1.1) causes initialization of only the class or interface that actually declares it,
+even though it might be referred to through the name of a subclass, a subinterface
+- object k je referenca more met isto metodo, če jo hočš klicat na childu A a = new B(); {B extends A}
+in a.metoda() more bit definirana v A in B, drugač nebo delalo, čeprav se kliče metoda v B
+- The jdeps tool is used to find out all dependencies of a class file or a jar file; it needs path to file
+jdeps --module-path out out\moduleA\test\A.class
+- var i = new int[ ][ ] { {1, 2, 3}, {4, 5, 6} } ;
+- All the instance or static variables are given a default values if not explicitly initialized
+- nemorš met statične spremenljivke znotraj metode
+- Whether a call needs to be wrapped in a try/catch or whether the enclosing method requires a throws clause depends
+on the class of the reference and not the class of the actual object
+- Neither Errors nor RuntimeExceptions are used for recoverable situations. RuntimeExceptions should be identified during testing and eliminated by fixing the code,
+ while Errors should be eliminated by fixing the environment.
+- int j = 5;
+          j = j + ++j + j + j; -j++/++j spreminja direkt vrednost j-ja: razlika j += j+ ++j; alpa j += j++ + j;
+- var ia = new int[][]{ {1, 2}, null }; would be valid;  var ia[][] = { {1, 2}, null }; pa ni
+- Multiple inheritance of state includes ability to inherit instance fields from multiple classes.
+Multiple inheritance of type includes ability to implement multiple interfaces and/or ability to extend from multiple clases.
+- (No access control keyword in the method declaration also means public in an interface. Note that the absence of access control keyword in the method declaration in a class means package protected.)
+However, Java 9 onwards, an interface is allowed to have private methods. It still cannot have protected methods though.
+- An interface can have a static method but the method must have a body in that case.
+- All interface methods have to be either public or private.
+- poglej si kaj spravš v char/byte/float/double
+- The main method should be static.
+- statične metode nemorjo bit inherited v interfacih - kličem prek reference na class
+default - če več metod inheritamo prek interfejsov - mormo implementirat v child clasu drgač se ne zbuilda
+- functional interface = single abstract method (SAM) {toString, equals, hashCode ne štejejo}
+- The contains() method is on the Collection interface but not the Map interface
+- uppercase letters sort before lowercase letters
+- numbers sort before letters => 123ABCabc
+Comparator<Duck> byWeight = new Comparator<Duck>() {
+    public int compare(Duck d1, Duck d2) {
+        return d1.getWeight()-d2.getWeight();
+    }
+};
+- Comparator<Duck> byWeight = Comparator.comparing(Duck::getWeight);
+- SortedMap is an interface and not a class.
+- ne-static metode so tud instance memberji
+- Anonymous classes cannot be declared static.
+- Serializable interface does not declare any methods. That is why it is also called as a "marker" interface.
+- code on the classpath can access the module path. By contrast, code on the module path is  unable to read from the classpath
+- če maš enum v switc-u je pod case: samo vrednost (nč več ime enuma)
+- enume lahko primerjaš oz. je priporočeno da z ==, ker jvm garantira sam 1 instanco
+- nad enum()-om maš name() za custom value morš pa definirat spremenljvko - k jo dostopaš brez()
+- A constructor cannot be final, static or abstract
+- var je lahk v switch-u
+- var cannot be used for fields, method parameters, and method return type
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
