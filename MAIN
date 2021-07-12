@@ -1,0 +1,34 @@
+- inheritance: metode se kličejo glede na tip new() objecta, fieldi(in statične metode!) se kličejjo glede na trenutno referenco
+- private>default>protected>public
+- pr overridanju v childu more bit manj restrictive acces modifier
+- An overriding method (i.e. a sub class's method) is allowed to return a sub-type of the type returned by the overridden method (i.e. super class's method).
+- int k = 1; k += 3 + ++k; ---> k=6 rezultat
+- Any field in an interface is implicitly public, static, and final, whether these keywords are specified or not.
+- final vedno inicializirane(+vsakmu konstruktorju)
+- subclass pr override more vedno met širši dostop
+- pr inicializaciji najprej statične stvari, potem ostalo
+- static methods can't be overriden
+- var nemoreš pr: fields, method params, method return types
+
+
+MODULES:
+-d: Set the destination directory for class files
+--module-path(-p): To je tk k classpath(dependencies)
+--module(-m)
+--describe-module(-d)
+-summay(-s)
+
+javac --module-path mods -d feeding feeding/zoo/animal/feeding/*.java feeding/module-info.java
+java --module-path feeding --module zoo.animal.feeding/zoo.animal.feeding.Task
+jar -cvf mods/zoo.animal.feeding.jar -C feeding/ .
+(jar -cvf dd.jar -C feeding/ .)
+java -p mods --describe-module zoo.animal.feeding
+java --list-modules (info, ne zažene programa)
+java --show-module-resolution -p feeding -m zoo.animal.feeding/zoo.animal.feeding.Task(info, zažene)
+jar --file mods/zoo.animal.feeding.jar --describe-module
+jdeps -summary mods/zoo.animal.feeding.jar(lists dependencies)
+
+
+Running module:
+module name/full class
+pr "java" command damo pr module-path tisto kjer smo pr "javac" compajlal kodo(feeding v tem primeru)
