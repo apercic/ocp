@@ -1,10 +1,25 @@
 LOCALIZATION
-```
-Locale myloc = new Locale.Builder().setLanguage("hinglish").setRegion("UK").build(); //L1
-        ResourceBundle msgs = ResourceBundle.getBundle("mymsgs", myloc);
-        Enumeration<String> en = msgs.getKeys();
-```
-
+- Locale myloc = new Locale.Builder().setLanguage("hinglish").setRegion("UK").build();
+  ResourceBundle msgs = ResourceBundle.getBundle("mymsgs", myloc);
+  Enumeration<String> en = msgs.getKeys();
+  
+ - če rečeš while(en.hasMoreElement())
+ potem združi use iz mymsgs_en_UK.properties>mymsgs_en.properties > mymsgs.properties
+ iz enga fajla bere od spodi navzgor propertije
+  
+- Locale.setDefault(new Locale("fr", "CA"));
+  Locale l = new Locale("jp", "JP");
+  ResourceBundle rb = ResourceBundle.getBundle("appmessages", l);
+  String msg = rb.getString("greetings");  
+  
+- retriving message bundle order: passed, default, without locale info - if all fails error is thrown
+- MMMM(4) prints out the longest form 'January', MMMMM(5) - prints just first letter 'J', more than 5M's - exception
+- NumberFormat formatter =  DecimalFormat.getCurrencyInstance(jp);
+- Locale.setDefault(new Locale) alpa Locale.setDefault(category, new Locale)
+- veljavno je samo Locale.US/Locale.CANADA.. nemore bit jezik v Locale
+- import java.time.LocalDate;
+  import java.time.format.DateTimeFormatter;
+  - DateFormat df = DateFormat.getDateInstance();
 
 JAVA DATA TYPES
 - .strip() or .trim() on a string both function the same (strip is unicode aware - never,better)
