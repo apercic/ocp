@@ -303,9 +303,9 @@ Comparator<Duck> byWeight = new Comparator<Duck>() {
 - Queue - add dodaja normalno kt v vrsto, push pa ravno obratno se vrine na začetek
 - char c = 2; je čist legit, ali pa Character c = 2; (autoboxa)
 - there is no such thing as ArrayMap
--
--
--
+- HashMap - key and value can be null, put() return null if key previously not associated with value or previous value
+- String array je inicializiran na null-e
+- 
 -
 -
 -
