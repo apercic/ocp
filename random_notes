@@ -290,18 +290,19 @@ Comparator<Duck> byWeight = new Comparator<Duck>() {
 - nad enum()-om maš name() za custom value morš pa definirat spremenljvko - k jo dostopaš brez()
 - A constructor cannot be final, static or abstract
 - var je lahk v switch-u
-- var cannot be used for fields, method parameters, and method return type
--
--
--
--
--
--
--
--
--
--
--
+- var cannot be used for fields, method parameters, and method return type; or var i = 10, j = 20
+- String xx = String.valueOf(44);
+  Integer yy = Integer.parseInt("sss");
+- A switch condition cannot accept float, long, double, or boolean
+- when you have "if if else" - the else belongs to the second if statement
+- you can use underscores - (but not commas) to format a number
+- var aa; aa = 7; you cant do this - only var aa = 7 works
+- var[][] ca = new int[3][]; - tole NI ok, ker neve katere vrste element gre v array
+- Map isn't a true collection - isn't from the Collections class (because it stores key-value pairs)
+- map.values() does tho return a Collection<?>
+- Queue - add dodaja normalno kt v vrsto, push pa ravno obratno se vrine na začetek
+- char c = 2; je čist legit, ali pa Character c = 2; (autoboxa)
+- there is no such thing as ArrayMap
 -
 -
 -
