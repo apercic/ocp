@@ -1,3 +1,11 @@
+LOCALIZATION
+```
+Locale myloc = new Locale.Builder().setLanguage("hinglish").setRegion("UK").build(); //L1
+        ResourceBundle msgs = ResourceBundle.getBundle("mymsgs", myloc);
+        Enumeration<String> en = msgs.getKeys();
+```
+
+
 JAVA DATA TYPES
 - .strip() or .trim() on a string both function the same (strip is unicode aware - never,better)
 - look up methods of StringBuilder (reverse, append(str) - can also be append(str, start, len), insert, replace, capacity(shows current capacity), 
