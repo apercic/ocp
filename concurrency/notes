@@ -1,0 +1,5 @@
+- reentrant lock si še poglej bolj podrobno
+- razlika med submit() pa execute() nad thread poolom
+- ConcurrentMap is important for the exam. You should go the API description for this interface.
+- Unless lock is private and final, it can be changed to point to some other object by another thread.
+In that case, the whole point of locking the critical section of the code using the same lock will be lost.
