@@ -1,3 +1,20 @@
+ANNOTATIONS
+- @SuppressWarnings("all") NO! (non-allowed params are ignored - not an error)! -allowed params: unchecked, deprecation, removal
+- extra oracle compiler: none, rawtypes, serial, and varargs
+- supressWarnings - excepts only one param string - if multiple must pass an array (@SuppressWarnings({"deprecation", "unchecked"}))
+- @SuppressWarnings("deprecation") should be on the method that calls the deprecated function (not on main for example)
+-       ElementType.ANNOTATION_TYPE
+        ElementType.CONSTRUCTOR
+        ElementType.FIELD
+        ElementType.LOCAL_VARIABLE
+        ElementType.METHOD
+        ElementType.PACKAGE
+        ElementType.PARAMETER
+        ElementType.TYPE
+        
+- You can omit the element name while specifying a value only when the name of the element is 'value'/ OR default public String name() default "";
+        
+
 LOCALIZATION
 - Locale myloc = new Locale.Builder().setLanguage("hinglish").setRegion("UK").build();
   ResourceBundle msgs = ResourceBundle.getBundle("mymsgs", myloc);
