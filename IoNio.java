@@ -18,11 +18,13 @@ public class IoNio {
         //concrete classes - high
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream); //or inputStream
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream); //or outputStream
-        BufferedReader bufferedReader = new BufferedReader(fileReader); //or reader
+        BufferedReader bufferedReader = new BufferedReader(fileReader); //or reader //has readLine() method
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); //or writer
 
         ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream); //or inputStream
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream); //or outputStream
+        
+        //this two also take String or File
         PrintStream printStream = new PrintStream(fileOutputStream); //boolean = autoFlush
         PrintWriter printWriter = new PrintWriter(writer); //or outputStream or fileOuputStream
 
