@@ -1,0 +1,17 @@
+- File(File parent, String child)
+- ObjectInput/OutputStream - writeObject()/readObject (to/from file)
+- available() method only tells you the number of bytes before we block another thread
+- Console c = new Console();  // DOES NOT COMPILE - only one instance, all constructors private
+- Console console = System.console();
+- CREATE_NEW 	Create a new file only if it does not exist, fail otherwise
+- Files.exists() - no error, just returns false if file doesn't exist
+- Path instances are immutable
+- isSameFile - exception if either path doesn't exist OR true in case path are equal(in terms of String.equals())
+- createDirectories() creates dir or does nothing if exists already + IO exception if wrong path
+- files may not need to have extensions
+- To delete a directory, it must be empty (delete(Paht)/deleteIfExists(Path))
+- isDirectory(Path), isSymbolicLink(Path), isRegularFile(Path) (they return false if path doesn't exist)
+- it is possible for isRegularFile() to return true for a symbolic link, as long as the link resolves to a regular file
+- isHidden()(only one that throws IOException), isReadable(), isWritable(), and isExecutable()
+- getLastModifiedTime()
+- NIO.2 Streams API methods use depth‐first searching with a depth limit(which can be changed - int value)
