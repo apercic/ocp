@@ -1,2 +1,6 @@
 - code on the classpath can access the module path
 - code on the module path is unable to read from the classpath
+- automatic modules on module path, unnamed modules on classpath
+
+- java.base is available to all modular applications(module info will compile if you explicitly require it)
+stran 272
