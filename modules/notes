@@ -1,1 +1,2 @@
-
+- code on the classpath can access the module path
+- code on the module path is unable to read from the classpath
