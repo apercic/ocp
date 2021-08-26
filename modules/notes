@@ -3,4 +3,4 @@
 - automatic modules on module path, unnamed modules on classpath
 
 - java.base is available to all modular applications(module info will compile if you explicitly require it)
-stran 272
+- Java will not allow you to compile modules that have circular dependencies
