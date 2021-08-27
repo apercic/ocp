@@ -4,4 +4,25 @@ EXCEPTIONS:
 - FileNotFoundException and NotSerializableException both inherit from IOException (checked exceptions)
 -try‐with‐resources statements require resources that implement the AutoCloseable interface
 - checked must be caught / unchecked (Errors and RuntimeExeceptions not)
-- Errors are fatal - poor practice to catch thme
+- Errors are fatal - poor practice to catch them
+- catch (IOException | FileNotFoundException e) {} // DOES NOT COMPILE because filenotfoundexception is a subclass of ioexception
+- also if you first cathc IOexception and then filenotfoundexception - unreachable code and doesnt compile
+
+- custom exception: extends Exception(for checked) and extends RuntimeException(for unchecked)
+class CannotSwimException extends Exception {} (definicija custom exceptiona); then just 'throws CannotSwimException' v metodi
+- if finally throws exception - it becomes primary - else the first that was thrown
+
+
+ASSERTIONS
+- assert test_value(boolean value):message(optional)
+- java –ea/-da Party.java (enable/disable assertions)
+
+
+DATES & TIMES
+- fr (lowercase language)
+- en_US (lowercase language _ uppercase country)
+
+- Locale.GERMAN = de
+- Locale.GERMANY = de_DE
+
+- resource bundles access: requested, requested with no country, default, default with no country, no locale-default bundle, error
