@@ -1,0 +1,7 @@
+EXCEPTIONS: 
+- In Java, all exceptions that inherit Exception but not RuntimeException are considered checked exceptions(checked need to be handled)
+- unchecked exceptions include any class that inherits RuntimeException or Error. An Error is fatal, and it is considered a poor practice to catch it.
+- FileNotFoundException and NotSerializableException both inherit from IOException (checked exceptions)
+-try‐with‐resources statements require resources that implement the AutoCloseable interface
+- checked must be caught / unchecked (Errors and RuntimeExeceptions not)
+- Errors are fatal - poor practice to catch thme
