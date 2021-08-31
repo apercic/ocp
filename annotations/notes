@@ -1,1 +1,29 @@
+-Creating a custom annotation:
+  public(it can also be default package-private) @interface Exercise {
+    public abstract int hoursPerDay();      //required
+    int start() default 6;  //not required
+    
+    
+    //constant variables - cant be included when we use the annotation
+    public static final int MAX_VOLTAGE = 18;
+  }
+  
+Using it:
+  @Exercise(hoursPerDay=3) public class Cheetah {}
+ 
+- () when using annotations are optional when no value is passed
+- For an element to be optional, rather than required, it must include a default value
+- order of values passed doesn't matter
+
+values: 
+Integer height(); - wrapper classes are not supported
+String[][] generalInfo(); - String[] is supported, String[][] isn't
+Enums and annotations are supported
+Wrappers, String[][] and custom classes aren't supported
+
+- public abstract is default
+- implicitly public, can't change to protected/private OR be final (abstract methods can't be final)
+
+
+  
 
