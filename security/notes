@@ -1,0 +1,4 @@
+- Opening and reading files has potential to be a target of denial of service attacks because of the size of the files
+(similarly, a highly compressed file could blow up into a huge file)
+
+- 
