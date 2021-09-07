@@ -24,6 +24,10 @@ Wrappers, String[][] and custom classes aren't supported
 - public abstract is default
 - implicitly public, can't change to protected/private OR be final (abstract methods can't be final)
 
-
+- @Injured("Broken Tail") public class Monkey {} = example of value() - the only one in annotation that may be required, no other value is allowed when called
   
+- @Target({ElementType.METHOD,ElementType.CONSTRUCTOR}) = allowed on methods or constructors
+- @Target(ElementType.TYPE_USE) = allowed almost everywhere (void methods still need ElementType.METHOD),
+but otherwise - as cast operations, in object creatiation, inside type declarations
 
+- @Retention(RetentionPolicy.RUNTIME) @interface Swimmer {} //SOURCE, CLASS, RUNTIME
