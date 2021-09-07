@@ -1,4 +1,7 @@
 - Opening and reading files has potential to be a target of denial of service attacks because of the size of the files
 (similarly, a highly compressed file could blow up into a huge file)
 
-- 
+- clone() is a method of the Object class - compiles always, but throws exception if class doesn't implement Cloneable
+- clone() creates shallow copy by default
+
+
