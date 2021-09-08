@@ -31,3 +31,14 @@ Wrappers, String[][] and custom classes aren't supported
 but otherwise - as cast operations, in object creatiation, inside type declarations
 
 - @Retention(RetentionPolicy.RUNTIME) @interface Swimmer {} //SOURCE, CLASS, RUNTIME
+- When @Target is not present, an annotation can be used in any place except TYPE_USE or TYPE_PARAMETER scenarios (cast operations, object creation, generic
+declarations, etc.)
+
+- (unrelated - just for notes) : 
+- the overriding method must have the same signature, the same or broader access modifier, and a covariant
+return type, and not declare any new or broader checked exceptions
+- functional interfaces, which are interfaces with exactly one abstract method (ex. equals() doesn't count)
+
+
+
+
