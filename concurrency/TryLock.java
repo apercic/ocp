@@ -20,6 +20,7 @@ public class TryLock {
     public static void main(String[] args) {
         Lock lock = new ReentrantLock();
         if (lock.tryLock()) {   //requests lock and returns immediately - returns true if lock succesfully accuired
+                                //if you call lock() the proccess waits until it can accuire lock
             try {
                 lock.lock();
                 System.out.println("Lock obtained, entering protected code");
