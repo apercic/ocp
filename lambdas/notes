@@ -1,0 +1,9 @@
+- peek() = a non-interfering action to perform on the elements as they are consumed from the stream 
+(intermediate operation - must use a terminal operation for elements to be processed through peek - also for sout only printed when a teminal operation at the end of stream)
+
+Stream.of("one", "two", "three", "four")
+         .filter(e -> e.length() > 3)
+         .peek(e -> System.out.println("Filtered value: " + e))
+         .collect(Collectors.toList());
+         
+-          
