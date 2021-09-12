@@ -15,3 +15,5 @@
 - isHidden()(only one that throws IOException), isReadable(), isWritable(), and isExecutable()
 - getLastModifiedTime()
 - NIO.2 Streams API methods use depth‐first searching with a depth limit(which can be changed - int value)
+- FileWriter throws error if given file doesnt exist and can't be created
+
