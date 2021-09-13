@@ -61,7 +61,21 @@ PreparedStatement offers better performance when the same query is to be run mul
 If test.txt not exist - try to create. pointer at first position = writes at the begining of the file  
  - Any exception that is thrown while closing a resource is added to the list of suppressed exceptions
 
+- jdbc index starts with 1
+- IntStrem has paralel() but no parallelStream()
+- this( ... ) can only be called in a constructor and that too as a first statement
+- method overloading has no relation with return-type
 
+- To write at the end of the file
+RandomAccessFile raf = new RandomAccessFile("file.txt", "rw");
+raf.seek( raf.length() );
+raf.writeChars("FINAL TEXT");
+
+- provides clause must have a "with" part also that specifies that class that implements the service
+- DateTimeFormatter.ofPattern("eeee d'st day of' MMMM yyyy") = Saturday 1st day of January 2000
+- Locale.IT means, the language is "it" and country is "IT"
+- nonmodular jars should be put on classpath instead of module-path
+- 
 
 
 
