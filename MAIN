@@ -75,7 +75,12 @@ raf.writeChars("FINAL TEXT");
 - DateTimeFormatter.ofPattern("eeee d'st day of' MMMM yyyy") = Saturday 1st day of January 2000
 - Locale.IT means, the language is "it" and country is "IT"
 - nonmodular jars should be put on classpath instead of module-path
-- 
+-     public static int doIt() throws Exception{
+        throw new Exception("Forget It");  - to je ok čeprou nč ne vrne
+    }
+    System.out.println(doIt()); = unhandled exception
+    
+ -    
 
 
 
