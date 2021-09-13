@@ -9,6 +9,76 @@
 - pr inicializaciji najprej statične stvari, potem ostalo
 - static methods can't be overriden
 - var nemoreš pr: fields, method params, method return types
+- subclasses of ArrayList: AttributeList, RoleList, RoleUnresolvedList (ArrayList is a subclass of AbstractList)
+- new StringBuilder("world").insert(0, "hello ").toString() = hello world - insert takes argument offset
+- you can say int a; in main method - just can't use it before initialized
+- widening is preferred over boxing/unboxing
+- Only methods of an interface can be private. private/protected fields are not allowed.
+- tud če maš new Child() in kličeš Parent p = new Child(); nad p kličeš metodo - kliče jo iz Child objekta
+  ampak more zarad reference ta metoda tud obstajat v parentu... lahk castaš v interface ali parent
+- precedence: ++, +, ==, =
+- constructor cant be static
+- An interface can have a static method but the method must have a body in that case. Can also have private methods.
+ All interface methods have to be either public or private
+- Queue - add dodaja normalno kt v vrsto, push pa ravno obratno se vrine na začetek
+- constructors and initializers are not invoked during deserialization
+- Arrays.compare() -1 if first less/shorter than second, 0 equals, 1 if first more/longer than second
+- 'var' is not allowed in a compound declaration
+- when calling constructor/method with a reference in lambda - can't pass paramether - this is a reference not an accual invocation
+ls.stream()
+.map(x->MyProcessor::new(x))  //not legal .map(MyProccesor::new) is ok
+.forEach(MyProcessor::process);
+
+- var es = Executors.newCachedThreadPool();
+  es.submit(Runnable/Callable)
+  
+-  Future<?> rf = es.submit(r); is ok, but if you specify the return type of Runnable it's not
+- Path.subpath(int beginIndex, int endIndex)
+index 0, root not considered as start, end index excluded, no starting or ending /
+
+- PreparedStatement allows several additional SQL types such as BLOB and CLOB.
+PreparedStatement offers better performance when the same query is to be run multiple times with different parameter values.
+
+- ExecutorService.submit() - can return - excepts Runnable&Callable
+  Executor.execute() . cant return - excepts just Runnable
+  
+- findAny() returns Optional, suquential() is made non-deterministic - use findFirst() if you want first result
+- default method in interface is always an instance method - cant be static
+- sql stmt.executeUpdate(updateString); is auto-commit mode
+- if ambigous interface methods from implemented - must provide own to avoid ambiguity
+- interface fields are public, static, final = cant be changed outside of interface
+- ps.setNull(3, Types.INTEGER);
+  ps.setNull(4, Types.VARCHAR);
+  
+- The List.subList method returns a view backed by the original list. It doesn't change the existing list
+- Remember that @SuppressWarnings annotation requires at least one string argument
+- functional interface = one abstract method
+-  A switch condition cannot accept float, long, double, or boolean
+
+- var raf = new RandomAccessFile("c:\\temp\\test.txt", "rwd");
+  raf.writeChars("hello");
+  raf.close();
+If test.txt not exist - try to create. pointer at first position = writes at the begining of the file  
+ - Any exception that is thrown while closing a resource is added to the list of suppressed exceptions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 MODULES:
