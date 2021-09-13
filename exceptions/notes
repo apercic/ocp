@@ -27,3 +27,4 @@ DATES & TIMES
 
 - resource bundles access: requested, requested with no country, default, default with no country, no locale-default bundle, error
 -  the resource bundle properties file must be in the CLASSPATH
+- just country is not ok
