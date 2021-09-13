@@ -80,7 +80,20 @@ raf.writeChars("FINAL TEXT");
     }
     System.out.println(doIt()); = unhandled exception
     
- -    
+ - contains() nad List sprejme object - ni važn tip list-a
+ - can't box int to Double
+ - 10/100 = 0 (integer division - obvious but be careful - it's not float/double)
+ - https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html
+ - Path.resolve() if the argument is relative - it's simply added to the path: if param is absolute it is just returned
+ - Collectors.toMap throws java.lang.IllegalStateException if an attempt is made to store a key that already exists in the Map
+ - check for unreachable statements
+ - private var x = 10; is invalid because you can't use var as instance variable
+ - var i = new int[ ][ ] { {1, 2, 3}, {4, 5, 6} }; is ok
+ - there is no reset() on stream
+ - for is a keyword and so cannot be used as a label
+ - AccessController.doPriviliged()
+ - overriding method must return either the same type or a sub type
+ - 
 
 
 
