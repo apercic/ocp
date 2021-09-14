@@ -4,6 +4,8 @@
 - An overriding method (i.e. a sub class's method) is allowed to return a sub-type of the type returned by the overridden method (i.e. super class's method).
 - int k = 1; k += 3 + ++k; ---> k=6 rezultat
 - Any field in an interface is implicitly public, static, and final, whether these keywords are specified or not.
+- methods in interface are implicitly public and abstract
+
 - final vedno inicializirane(+vsakmu konstruktorju)
 - subclass pr override more vedno met širši dostop
 - pr inicializaciji najprej statične stvari, potem ostalo
@@ -93,11 +95,23 @@ raf.writeChars("FINAL TEXT");
  - for is a keyword and so cannot be used as a label
  - AccessController.doPriviliged()
  - overriding method must return either the same type or a sub type
- - 
-
-
-
-
+ - static instance variables are initialized also
+ - you can do replace() on String, but not append()
+ - mismatch() method returns the first mismatched element index of an array
+- A module exports packages to other modules. It cannot export individual classes
+- a list of no exception is a valid subset of a list of exceptions thrown by the superclass method
+- D in dates = day of year (ex. 189)
+- if the original (overridden) method does not have any throws clause, the overriding method cannot declare any checked exceptions
+- @SafeVaraargs can only be applied to constructors and methods.
+- module-info.java cannot be empty and, at a minimum, it must specify the name of the module
+- Generic classes:
+public class SpecialPicker<K>{
+  public K pickOne(K k1, K k2){
+    return k1.hashCode()>k2.hashCode()?k1:k2;
+  }
+} 
+SpecialPicker<Integer> sp = new SpecialPicker<>();
+System.out.println(sp.pickOne(1, 2).intValue()+1);
 
 
 
